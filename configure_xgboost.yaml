@@ -1,0 +1,44 @@
+---
+- name: configure_xgboost
+  hosts: xgboost
+  become: true
+  callback_whitelist: profile_tasks
+  tasks:
+
+    - name: update packages & prep system
+      script: System_prep.sh
+
+    - name: reboot
+      reboot:
+
+    - name: wait for connection
+      wait_for_connection:
+      delay: 75
+
+    - name: install CUDA libs and configure CUDNN (This may take a few minutes...)
+      script: CUDA_prep.sh
+
+    - name: reboot
+      reboot:
+
+    - name: wait for connection
+      wait_for_connection:
+      delay: 75
+
+    - name: install and prep xgboost (This may also take a while...)
+      script: XGBoost_prep.sh
+
+    - name: reboot
+      reboot:
+
+    - name: wait for connection
+      wait_for_connection:
+      delay: 75
+
+
+
+
+
+
+
+
