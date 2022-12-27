@@ -25,6 +25,9 @@ pip install numpy
 pip install scikit-learn
 pip install xgboost
 
+#for multi gpu
+pip install "dask[complete]"
+
 #
 
 #Install Cmake
