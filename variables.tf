@@ -7,7 +7,7 @@ variable "aws_region" {
 variable "instance_type" {
   type = list(string)
   description = "instance type for ec2"
-  default   =  ["p4d.24xlarge", "p3.2xlarge", "p3.8xlarge", "p3.16xlarge", "p3dn.24xlarge", "g5.xlarge"]
+  default   =  ["p3.2xlarge", "p3.8xlarge", "g5.24xlarge"]
 }
 
 variable "key_name" {
@@ -16,3 +16,7 @@ variable "key_name" {
 }
 
 
+variable "ansible_hosts_dir" {
+    description = "Where is ansible/hosts?"
+    default = "etc/ansible/hosts"
+}

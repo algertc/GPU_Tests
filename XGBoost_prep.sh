@@ -17,16 +17,17 @@ export PATH=$PATH:$CUDA_HOME/bin
 #Python prerequisites
 apt-get -y install python3
 apt-get -y install g++ gfortran
-apt-get -y install python-dev python-numpy python-scipy python-matplotlib python-pandas
+apt-get -y install python-dev python-scipy python-matplotlib python-pandas
 apt-get -y install libatlas-base-dev
 apt-get -y install python3-pip
 export PATH=/Users/Ubuntu/Library/Python/3.8/bin:$PATH
-pip install numpy
+pip install numpy==1.23.5 #--> Numba requires numpy <1.24.0
 pip install scikit-learn
 pip install xgboost
 
 #for multi gpu
 pip install "dask[complete]"
+pip install dask_cuda #--> Seems to be different that the main dask pkg and specific for local cuda clusters
 
 #
 

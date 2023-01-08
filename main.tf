@@ -33,7 +33,10 @@ resource "aws_instance" "ec2_instance" {
   tags = {
     Name = var.instance_type[count.index]
   }
-  
+
+  provisioner "local-exec" {
+  command = "sed -i '' 's/[xgboost]/[xgboost]\n${self.public_ip}/' ${var.ansible_hosts_dir}"
+  }
 }
 
 output "IPAddress" {
