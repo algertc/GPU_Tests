@@ -32,6 +32,10 @@ pip install os, json, time, cupy, subprocess
 pip install "dask[complete]"
 pip install dask_cuda #--> Seems to be different that the main dask pkg and specific for local cuda clusters
 
+#INSTALL RAPIDS
+pip install cudf-cu11 dask-cudf-cu11 --extra-index-url=https://pypi.ngc.nvidia.com
+pip install cuml-cu11 --extra-index-url=https://pypi.ngc.nvidia.com
+pip install cugraph-cu11 --extra-index-url=https://pypi.ngc.nvidia.com
 #
 
 #Install Cmake

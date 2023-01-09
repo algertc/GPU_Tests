@@ -71,3 +71,5 @@ bst = output['booster']
 multigpu_res = output['history']
 print("Multi GPU Training Time: %s seconds" % (str(multigpu_time)))
 
+
+

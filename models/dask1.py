@@ -15,3 +15,11 @@ train_dir='data/chunked_higgs/*.csv'
 df = dask_cudf.read_csv(train_dir, header=None, names=colnames, chunksize=None)
 
 print("Number of partitions is", df.npartitions)
+
+######
+
+df["key"] = df.feature02.round()
+group_means = df.groupby("key").mean().persist()
+wait(group_means);
+
+group_means.head()
