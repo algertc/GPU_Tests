@@ -24,6 +24,8 @@ export PATH=/Users/Ubuntu/Library/Python/3.8/bin:$PATH
 pip install numpy==1.23.5 #--> Numba requires numpy <1.24.0
 pip install scikit-learn
 pip install xgboost
+
+#pkgs for non virtualenv
 pip install os, json, time, cupy, subprocess
 
 #for multi gpu
